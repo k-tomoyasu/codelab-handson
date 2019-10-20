@@ -87,14 +87,13 @@
 <pre>claat export {GOOGLE_DOCS_ID}</pre>
 <p>claatのexportコマンドのパラメータにDocsのIDを渡すことで出力されます。</p>
 <p>DocsのURL「https://docs.google.com/document/d/hogehoge/」の「hogehoge」部分がIDとなります。今回作成しているDocsのURLは「<a href="https://docs.google.com/document/d/1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI/edit#" target="_blank">https://docs.google.com/document/d/1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI</a>」なので、IDは「1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI」となります。このIDを使って以下のclaat exportコマンドを実行するとindex.htmlをはじめとした成果物が出力されます。</p>
-<pre>claat export </pre>
-<p>1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI</p>
+<pre>claat export 1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI</pre>
 <h2 is-upgraded>claatでの認証</h2>
 <p>最初にexportする時にはGoogleアカウントの認証が求められます。CLIの指示の通りに実施すればOKです。</p>
 <h3 is-upgraded>更新</h3>
-<p>claatのv2.2.0ではバグ?でupdateコマンドが失敗するので代替方法を書いていきます</p>
-<p>claatにはupdateコマンドがあるのですが、現在期待通りに動作しないのでexportコマンドによってDocsの更新を反映します。</p>
-<p>毎回DocsのIDを指定してexportを実行するのは面倒なので、Makefileなりスクリプトなりに書くなどすると楽だと思います。</p>
+<aside class="warning"><p>claatのv2.2.0ではバグ?でupdateコマンドが失敗してしまいます</p>
+</aside>
+<p>claatにはupdateコマンドがあるのですが、現在期待通りに動作しないのでexportコマンドによってDocsの更新を反映します。毎回DocsのIDを指定してexportを実行するのは面倒なので、Makefileなりスクリプトなりに書くなどすると楽だと思います。</p>
 
 
       </google-codelab-step>
