@@ -1,0 +1,138 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Google Codelabs ハンズオン</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id=""
+                  title="Google Codelabs ハンズオン"
+                  environment="web"
+                  feedback-link="https://github.com/k-tomoyasu/codelab-handson">
+    
+      <google-codelab-step label="はじめに" duration="3">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Google Codelabs形式のコンテンツ作成手順</li>
+<li>GitHub Pagesでの公開手順</li>
+</ul>
+<p> このCodelabではGoogle Codelabを作成し、Github Pagesで公開するまでを環境構築から行なっていきます。</p>
+<h2 is-upgraded>Google Codelabsとは</h2>
+<p>様々な実装のガイドラインやチュートリアルをハンズオン形式で学ぶコンテンツです。Googleが誰でもCodelabを作れるようにツールを公開しており、良い感じのコンテンツを簡単な編集作業で作ることができます。</p>
+<ul>
+<li>Google Codelabs<br><a href="https://codelabs.developers.google.com/" target="_blank">https://codelabs.developers.google.com/</a></li>
+<li>日本語のコードラボ集<br><a href="https://codelabs.developers.google.com/lang-ja/" target="_blank">https://codelabs.developers.google.com/lang-ja/</a></li>
+</ul>
+<h2 is-upgraded>作成・公開の流れ</h2>
+<ol type="1" start="1">
+<li>Google Docsでドキュメント作成</li>
+<li>CLIツールのclaatで静的コンテンツを生成</li>
+<li>2.のコンテンツをWebに公開(このCodelabではGithub Pagesを利用)</li>
+</ol>
+<h2 is-upgraded>Codelab &amp; GitHub Pagesのメリット</h2>
+<p>今回紹介するコンテンツの作成・公開には以下のようなメリットがあると考えています。</p>
+<ul>
+<li>コンテンツの体裁が統一される。しかも綺麗。見た目大事</li>
+<li>masterをpushしたら即公開なので楽</li>
+<li>GitHubで修正のプルリクを受け付けられる</li>
+</ul>
+<h2 is-upgraded>サンプル</h2>
+<ul>
+<li><a href="https://docs.google.com/document/d/1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI/edit?usp=sharing" target="_blank">入力したGoogle Docs</a></li>
+<li><a href="https://github.com/k-tomoyasu/codelab-handson" target="_blank">出力したコンテンツを置いているリポジトリ</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="準備" duration="5">
+        <h2 is-upgraded>claatのインストール</h2>
+<p>claatとは<a href="https://github.com/googlecodelabs/tools/tree/master/claat" target="_blank">Googleが公開している</a>Golang製のCodelab作成用CLIツールです。</p>
+<p>claatのGitHubリポジトリからダウンロードできます。</p>
+<p><a href="https://github.com/googlecodelabs/tools/releases/tag/v2.2.0" target="_blank">https://github.com/googlecodelabs/tools/releases/</a></p>
+<p>Golangの環境がある場合は、go getでもOKです。</p>
+<pre>go get github.com/googlecodelabs/tools/claat</pre>
+<h2 is-upgraded>プレビュー用のchrome extensionインストール</h2>
+<p>Google Docsで作成中のCodelabをプレビューするchrome extensionがあります。作業効率がかなり上がるので、以下リンク先から入れておきます。</p>
+<p><a href="https://chrome.google.com/webstore/detail/preview-codelab/lhojjnijnkiglhkggagbapfonpdlinji" target="_blank">https://chrome.google.com/webstore/detail/preview-codelab/lhojjnijnkiglhkggagbapfonpdlinji</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Google Docsで作成" duration="5">
+        <p>まずは新規のGoogle Docsを作成します。Google DocsでのCodelab用の記法が定められており、これに従うことでわりと簡単にリッチなコンテンツが作れます。</p>
+<p>記法については以下のリンク先が分かりやすいです。ここでは割愛して、このDocsをコピペしてしまいます。</p>
+<h3 is-upgraded><a href="https://docs.google.com/document/d/17d7hzKZVbiAvEQ882ozn19DI6Sy-DWbXLJnv_EgK5xY/edit#" target="_blank">記法のサンプル</a></h3>
+<h3 is-upgraded><a href="https://github.com/googlecodelabs/tools/blob/master/FORMAT-GUIDE.md" target="_blank">記法の公式ドキュメント</a></h3>
+<h2 is-upgraded>Docsを書き上げたら</h2>
+<h3 is-upgraded>新規作成</h3>
+<p>Docsを書き上げたら、claatを使ってhtmlを出力していきます。</p>
+<pre>claat export {GOOGLE_DOCS_ID}</pre>
+<p>claatのexportコマンドのパラメータにDocsのIDを渡すことで出力されます。</p>
+<p>DocsのURL「https://docs.google.com/document/d/hogehoge/」の「hogehoge」部分がIDとなります。今回作成しているDocsのURLは「<a href="https://docs.google.com/document/d/1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI/edit#" target="_blank">https://docs.google.com/document/d/1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI</a>」なので、IDは「1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI」となります。このIDを使って以下のclaat exportコマンドを実行するとindex.htmlをはじめとした成果物が出力されます。</p>
+<pre>claat export </pre>
+<p>1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI</p>
+<h2 is-upgraded>claatでの認証</h2>
+<p>最初にexportする時にはGoogleアカウントの認証が求められます。CLIの指示の通りに実施すればOKです。</p>
+<h3 is-upgraded>更新</h3>
+<p>claatのv2.2.0ではバグ?でupdateコマンドが失敗するので代替方法を書いていきます</p>
+<p>claatにはupdateコマンドがあるのですが、現在期待通りに動作しないのでexportコマンドによってDocsの更新を反映します。</p>
+<p>毎回DocsのIDを指定してexportを実行するのは面倒なので、Makefileなりスクリプトなりに書くなどすると楽だと思います。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Markdownで作成" duration="1">
+        <p>markdownでも作れるそうです。差分管理をがっつりやりたい・好きなエディタで編集したいなどの要求にマッチしていそうですが、Docsで作る方が楽なのでここでは紹介しません(できません)。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Github Pagesで公開" duration="5">
+        <p>出力したCodelabコンテンツをWebに公開します。ここではGiHhub Pagesでの公開を進めていきます。</p>
+<p>まずは、ここまでの成果物をコミットしてリポジトリにpushします。ルートディレクトリに「index.html」が置かれていることを確認してください。</p>
+<p>pushが成功したら、Githubリポジトリの「Settings」からGitHub Pagesの公開設定を行います。</p>
+<p>Settingページに遷移したら、Github Pagesのセクションの「Source」で「master brach」を選択します。</p>
+<p class="image-container"><img style="width: 602.00px" src="img/3472c66547c69b44.png"></p>
+<p>選択すると以下のようにGitHub PagesのURLが出力されます。</p>
+<p class="image-container"><img style="width: 602.00px" src="img/e31b0a66d1ffe57a.png"></p>
+<p><strong>これで完了です！</strong></p>
+<p><a href="https://k-tomoyasu.github.io/codelab-handson/" target="_blank">https://k-tomoyasu.github.io/codelab-handson/</a>にCodelabが公開されています。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="最後に" duration="1">
+        <p> Codelabを作成してGithub Pagesで公開するまでの流れをはここまでです。</p>
+<p>ご指摘などあれば是非issueの登録やプルリクをお願いいたします。</p>
+<h3 is-upgraded><a href="https://github.com/k-tomoyasu/codelab-handson" target="_blank">このCodelabへのプルリク大歓迎です!</a></h3>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

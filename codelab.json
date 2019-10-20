@@ -1,0 +1,23 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2019-10-20T10:38:09Z",
+  "id": "",
+  "duration": 20,
+  "title": "Google Codelabs ハンズオン",
+  "authors": "k-tomoyasu",
+  "summary": "Google Codelabs形式のコンテンツを作って公開するまで",
+  "source": "1MxMjBX-KfNBqZuYNT-SbinOcac6GN8Lz6ojfFSlCCxI",
+  "theme": "codelabs",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "Codelabs"
+  ],
+  "tags": [],
+  "feedback": "https://github.com/k-tomoyasu/codelab-handson",
+  "url": ""
+}
